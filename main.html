@@ -1,0 +1,56 @@
+<div class = "movieDiv" ng-if="details.Response === 'True'">
+<div class="row">
+<div class="col-md-4">
+  <img ng-src="{{ details.Poster=='N/A' ? 'http://placehold.it/200x220?text=N/A' : details.Poster }}" class="movie-poster">
+</div>
+<div class="col-md-8">
+  <span class="span-outer">
+  <br>
+    <a href="http://imdb.com/title/{{ details.imdbID }}" target="_blank"><span ng-bind="details.Title"></span></a>
+  </span>, <span ng-bind="details.SearchYear"></span>
+
+  <p><strong>Released on: </strong><span ng-bind="details.Released"></span></p>
+
+  <p><span ng-bind="details.Plot"></span></p>
+
+  <p class="detailsP">
+    <div class="innerP">
+      <span class="label label-primary">Director :</span> <span ng-bind="details.Director"></span>
+    </div>
+    <div class="innerP">
+      <span class="label label-primary">Actors :</span> <span ng-bind="details.Actors"></span>
+    </div>
+    <div class="innerP">
+      <span class="label label-primary">Genre :</span> <span ng-bind="details.Genre"></span>
+    </div>
+  </p>
+
+  <p class="ratingP">Ratings:<br>
+    <strong>IMDb Rating</strong>: 
+<span class="label label-success"><span ng-bind="details.imdbRating"></span>
+
+
+ <strong>Rotten Tomatoes</strong>: <span class="label label-success">{{ details.tomatoRating }}</span>
+  </p>
+
+  <p class="outer-p-3">
+    <a ng-href="https://www.youtube.com/results?search_query={{ details.Title }}" target="_blank" class="btn btn-default btn-xs btn-info">Watch Trailers!</a>
+    <span class="divider"></span>
+    <a ng-href="http://subscene.com/subtitles/title?q={{ details.Title }}" target="_blank" class="btn btn-default btn-xs btn-info">Get Subtitles!</a>
+    <span class="divider"></span>
+    <a ng-href="http://www.theost.com/search/custom/?key={{ details.Title }}" target="_blank" class="btn btn-default btn-xs btn-info">Hear Soundtracks!</a>
+    <span class="divider"></span>
+    <a ng-href="http://www.amazon.in/s/ref=nb_sb_noss_1?url=search-alias%3Ddvd&field-keywords={{ details.Title }}" target="_blank" class="btn btn-default btn-xs btn-info">Buy this movie!</a>
+  </p>
+</div>
+</div>
+
+  </p>
+</div>
+<div ng-if="details.Response==='False'">
+  <h1>No results found.</h1>
+
+</span><br>
+</div>
+
+</div>
